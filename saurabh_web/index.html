@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Verma - Senior Backend Engineer</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" href="python.png">
+    <link rel="apple-touch-icon" href="python.png">
+    <link rel="shortcut icon" href="python.png">
+    
+    <!-- Meta tags for better SEO and social sharing -->
+    <meta name="description" content="Saurabh Verma - Senior Backend Engineer specializing in Python, AWS, scalable systems, and cloud architecture. 10+ years experience in Django, Flask, PostgreSQL, MongoDB, and microservices.">
+    <meta name="keywords" content="Backend Engineer, Python Developer, AWS, Django, Flask, PostgreSQL, MongoDB, Scalable Systems, Cloud Architecture">
+    <meta name="author" content="Saurabh Verma">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Saurabh Verma - Senior Backend Engineer">
+    <meta property="og:description" content="Senior Backend Engineer with 10+ years experience in Python, AWS, and scalable system design. Expert in Django, Flask, PostgreSQL, MongoDB, and cloud architecture.">
+    <meta property="og:image" content="python.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="Saurabh Verma - Senior Backend Engineer">
+    <meta name="twitter:description" content="Senior Backend Engineer with 10+ years experience in Python, AWS, and scalable system design.">
+    <meta name="twitter:image" content="python.png">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,0 1000,60 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            border: 4px solid rgba(255,255,255,0.3);
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .header .description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .download-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .nav li {
+            margin: 0 30px;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border: 2px solid #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-tag.expert {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            border-color: #38a169;
+        }
+
+        .skill-tag.expert:hover {
+            background: linear-gradient(135deg, #38a169, #2f855a);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 161, 105, 0.3);
+        }
+
+        .skill-tag.advanced {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+            color: white;
+            border-color: #3182ce;
+        }
+
+        .skill-tag.advanced:hover {
+            background: linear-gradient(135deg, #3182ce, #2c5282);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid transparent;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .experience-title-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .experience-card h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .experience-card h3::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .company-name::before {
+            content: '🏢';
+            font-size: 1.1rem;
+        }
+
+        .period-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .period-badge::before {
+            content: '📅';
+            font-size: 0.9rem;
+        }
+
+        .location {
+            color: #718096;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .location::before {
+            content: '📍';
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            margin-bottom: 25px;
+        }
+
+        .experience-description > p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .achievement-list li {
+            color: #4a5568;
+            margin-bottom: 12px;
+            padding: 12px 0 12px 40px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 1.2rem;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .achievement-list li:hover {
+            background: #f7fafc;
+            padding-left: 45px;
+            border-radius: 8px;
+        }
+
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .experience-tag {
+            background: linear-gradient(135deg, #e6fffa, #b2f5ea);
+            color: #2d3748;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #81e6d9;
+            transition: all 0.3s ease;
+        }
+
+        .experience-tag:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .project-period {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: #e2e8f0;
+            color: #2d3748;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-highlights {
+            list-style: none;
+        }
+
+        .project-highlights li {
+            color: #4a5568;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Education & Certifications */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .edu-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .edu-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .edu-card h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .edu-details {
+            color: #718096;
+            margin-bottom: 10px;
+        }
+
+        .edu-score {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #667eea;
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .nav li {
+                margin: 5px 0;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .experience-title-section {
+                min-width: auto;
+            }
+
+            .period-badge {
+                align-self: flex-start;
+            }
+
+            .experience-card {
+                padding: 25px;
+            }
+
+            .experience-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .company-name {
+                font-size: 1.1rem;
+            }
+
+            .achievement-list li {
+                padding-left: 35px;
+                font-size: 0.95rem;
+            }
+
+            .achievement-list li::before {
+                width: 25px;
+                height: 25px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img src="profile.jpg" alt="Saurabh Verma Profile Picture">
+                </div>
+                <h1>Saurabh Verma</h1>
+                <p class="subtitle">Senior Backend Engineer | Python • AWS • Scalable Systems</p>
+                <p class="description">Backend-focused engineer with 10 years of experience in scalable system design, product architecture, and cloud development.</p>
+                
+                <div class="contact-info">
+                    <a href="mailto:saurabh.sde3@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>saurabh.sde3@gmail.com</span>
+                    </a>
+                    <a href="tel:+917451069217" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7451069217</span>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>NOIDA, India</span>
+                    </div>
+                </div>
+
+                <a href="#" class="download-btn" onclick="downloadResume()">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming & Frameworks</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag expert">Python</span>
+                        <span class="skill-tag expert">Django</span>
+                        <span class="skill-tag expert">Django REST Framework</span>
+                        <span class="skill-tag advanced">Flask</span>
+                        <span class="skill-tag advanced">FastAPI</span>
+                        <span class="skill-tag advanced">SQLAlchemy</span>
+                        <span class="skill-tag advanced">Asynchronous Programming</span>
+                        <span class="skill-tag advanced">Data Structures & Algorithms</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag expert">AWS Services</span>
+                        <span class="skill-tag expert">S3, EC2, Lambda</span>
+                        <span class="skill-tag expert">SQS, SNS, ECS</span>
+                        <span class="skill-tag advanced">API Gateway</span>
+                        <span class="skill-tag advanced">CloudWatch</span>
+                        <span class="skill-tag advanced">Docker</span>
+                        <span class="skill-tag advanced">Jenkins</span>
+                        <span class="skill-tag advanced">Infrastructure as Code</span>
+                        <span class="skill-tag advanced">AWS CDK</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases & Messaging</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag expert">PostgreSQL</span>
+                        <span class="skill-tag expert">MongoDB</span>
+                        <span class="skill-tag advanced">MySQL</span>
+                        <span class="skill-tag expert">Redis</span>
+                        <span class="skill-tag advanced">Memcached</span>
+                        <span class="skill-tag expert">RabbitMQ</span>
+                        <span class="skill-tag expert">Celery</span>
+                        <span class="skill-tag advanced">Database Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag advanced">Git & GitHub</span>
+                        <span class="skill-tag advanced">Bitbucket</span>
+                        <span class="skill-tag advanced">Jira</span>
+                        <span class="skill-tag advanced">Sentry</span>
+                        <span class="skill-tag expert">Selenium</span>
+                        <span class="skill-tag advanced">OAuth2 & JWT</span>
+                        <span class="skill-tag advanced">Google Maps API</span>
+                        <span class="skill-tag advanced">Twilio</span>
+                        <span class="skill-tag advanced">Razorpay</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI/ML & Leadership</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag advanced">LLaMA</span>
+                        <span class="skill-tag advanced">OpenAI GPT</span>
+                        <span class="skill-tag advanced">GitHub Copilot</span>
+                        <span class="skill-tag expert">Team Leadership</span>
+                        <span class="skill-tag expert">Code Reviews</span>
+                        <span class="skill-tag expert">Mentoring</span>
+                        <span class="skill-tag expert">System Architecture</span>
+                        <span class="skill-tag expert">Project Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> Design Patterns & Principles</h3>
+                    <div class="skills-container">
+                        <span class="skill-tag expert">Object-Oriented Programming</span>
+                        <span class="skill-tag advanced">Factory Pattern</span>
+                        <span class="skill-tag advanced">Singleton Pattern</span>
+                        <span class="skill-tag advanced">Strategy Pattern</span>
+                        <span class="skill-tag expert">RBAC</span>
+                        <span class="skill-tag expert">Multi-tenant Architecture</span>
+                        <span class="skill-tag expert">Scalable System Design</span>
+                        <span class="skill-tag advanced">Microservices</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h3>Senior Engineer</h3>
+                            <div class="company-name">Cambium Networks</div>
+                            <div class="location">Bangalore, Karnataka</div>
+                        </div>
+                        <div class="period-badge">01/2023 - Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Leading backend development for cnMaestro, a cloud-based network management platform serving enterprises and ISPs globally.</p>
+                        <ul class="achievement-list">
+                            <li>Developed and optimized backend services for network monitoring and device management</li>
+                            <li>Implemented asynchronous task processing with RabbitMQ & Celery for high-volume real-time events</li>
+                            <li>Optimized database queries in MongoDB & PostgreSQL, improving system efficiency</li>
+                            <li>Enhanced system reliability with Redis caching for API optimization</li>
+                            <li>Applied OOP principles and design patterns for scalable backend services</li>
+                            <li>Mentored junior developers on API design and cloud-native practices</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">Flask</span>
+                            <span class="experience-tag">AWS</span>
+                            <span class="experience-tag">PostgreSQL</span>
+                            <span class="experience-tag">MongoDB</span>
+                            <span class="experience-tag">Redis</span>
+                            <span class="experience-tag">RabbitMQ</span>
+                            <span class="experience-tag">Celery</span>
+                            <span class="experience-tag">Team Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h3>Senior Software Developer</h3>
+                            <div class="company-name">Helloverify India Private Limited</div>
+                            <div class="location">Noida, Uttar Pradesh</div>
+                        </div>
+                        <div class="period-badge">02/2020 - 01/2023</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Led backend development for a background verification platform offering instant document verification and identity validation.</p>
+                        <ul class="achievement-list">
+                            <li>Designed scalable backend services using Django & DRF for high-volume verification requests</li>
+                            <li>Automated document verification workflows using Selenium, reducing manual intervention by 70%</li>
+                            <li>Integrated third-party services: Twilio, Razorpay, and Google Maps API</li>
+                            <li>Led development team and owned complete backend modules lifecycle</li>
+                            <li>Designed high-level and low-level architectures for scalability</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Django</span>
+                            <span class="experience-tag">DRF</span>
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">Selenium</span>
+                            <span class="experience-tag">AWS</span>
+                            <span class="experience-tag">Twilio</span>
+                            <span class="experience-tag">Razorpay</span>
+                            <span class="experience-tag">System Architecture</span>
+                            <span class="experience-tag">Team Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-title-section">
+                            <h3>Consultant</h3>
+                            <div class="company-name">CPA Global</div>
+                            <div class="location">Noida, Uttar Pradesh</div>
+                        </div>
+                        <div class="period-badge">08/2015 - 01/2020</div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Provided technology solutions for enterprise operations streamlining at a technology-driven company.</p>
+                        <ul class="achievement-list">
+                            <li>Automated data extraction and report generation using Selenium</li>
+                            <li>Implemented role-based access control (RBAC) for secure authentication</li>
+                            <li>Developed enterprise solutions to streamline business operations</li>
+                            <li>Delivered projects consistently on time, earning Pursuit of Excellence Award</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">Selenium</span>
+                            <span class="experience-tag">RBAC</span>
+                            <span class="experience-tag">Enterprise Solutions</span>
+                            <span class="experience-tag">Data Extraction</span>
+                            <span class="experience-tag">Report Generation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>cnMaestro – Network Management Platform</h3>
+                        <div class="project-period">01/2023 - Present</div>
+                        <p class="project-description">
+                            A cloud-based and on-premises software platform for secure, end-to-end wireless network management, offering full network visibility and zero-touch provisioning.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">RabbitMQ</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">LLaMA</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Developed multi-tenant architecture for multiple network operators</li>
+                            <li>Implemented real-time network monitoring APIs</li>
+                            <li>Integrated zero-touch provisioning for automated device onboarding</li>
+                            <li>Optimized large-scale data processing and storage</li>
+                            <li>Fine-tuned Meta's LLaMA model for domain-specific NLP tasks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>HelloV – WhatsApp Background Verification</h3>
+                        <div class="project-period">08/2021 - 01/2023</div>
+                        <p class="project-description">
+                            A WhatsApp-integrated application enabling instant document verification (DL, Aadhaar, etc.) and criminal background checks.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">DRF</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Celery</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Integrated WhatsApp chatbot for seamless document submission</li>
+                            <li>Implemented OCR-based document processing</li>
+                            <li>Built asynchronous task processing for background checks</li>
+                            <li>Automated criminal record searches eliminating manual intervention</li>
+                            <li>Led requirement gathering and system design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SocialTick – Mobile Background Verification</h3>
+                        <div class="project-period">01/2021 - 08/2021</div>
+                        <p class="project-description">
+                            A mobile application enabling instant and accurate background verification, including document verification, criminal checks, liveliness checks, and face matching.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">DRF</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Celery</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Designed real-time verification workflows</li>
+                            <li>Implemented face-matching and liveliness detection using AI algorithms</li>
+                            <li>Integrated secure document upload & OCR processing</li>
+                            <li>Automated Aadhaar, DL, and passport verification</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Visa Screening – Web-Based Verification</h3>
+                        <div class="project-period">02/2020 - 12/2020</div>
+                        <p class="project-description">
+                            Designed and developed a Django & DRF-based backend for managing document submission, verification workflows, and payment processing for visa applicants.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">DRF</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">RBAC</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Automated document validation using Selenium</li>
+                            <li>Implemented RBAC for secure applicant data handling</li>
+                            <li>Seamless API integration with Angular frontend</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>iWeb Task Manager – Team Collaboration</h3>
+                        <div class="project-period">06/2016 - 01/2020</div>
+                        <p class="project-description">
+                            Developed a Django & DRF-based backend to manage tasks, schedules, and team collaboration with real-time notifications.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">DRF</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Real-time</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Real-time notifications for task updates</li>
+                            <li>User access management with permissions</li>
+                            <li>Integrated APIs with Angular frontend</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AutoBot – Data Extraction & Reporting</h3>
+                        <div class="project-period">10/2015 - 05/2016</div>
+                        <p class="project-description">
+                            Developed a Flask-based application to automate data extraction from multiple sources using Selenium with dynamic data parsing capabilities.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">Data Processing</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <ul class="project-highlights">
+                            <li>Dynamic data parsing from unstructured to structured reports</li>
+                            <li>Error handling and retry mechanisms</li>
+                            <li>Reliable extraction and seamless report generation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>MTech - IT - Software Engineering</h3>
+                    <div class="edu-details">IIITA, Allahabad</div>
+                    <div class="edu-details">2013 - 2015</div>
+                    <div class="edu-score">9.12 CGPA</div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>BTech - Computer Science and Engineering</h3>
+                    <div class="edu-details">ACET - UPTU, Aligarh</div>
+                    <div class="edu-details">2008 - 2012</div>
+                    <div class="edu-score">75.90%</div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <div class="edu-details">Associate Level</div>
+                    <div class="edu-details">February 2021</div>
+                    <div class="edu-score">Certified</div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python Gold Badge</h3>
+                    <div class="edu-details">HackerRank</div>
+                    <div class="edu-details">May 2020</div>
+                    <div class="edu-score">Gold Level</div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Ethical Hacking Certification</h3>
+                    <div class="edu-details">Kyrion & Techdefence</div>
+                    <div class="edu-details">2011 & 2013</div>
+                    <div class="edu-score">Certified</div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>GATE Qualified</h3>
+                    <div class="edu-details">2011 - 2018</div>
+                    <div class="edu-details">Multiple Years</div>
+                    <div class="edu-score">98+ Percentile</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="mailto:saurabh.sde3@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/saurabh-v-b3a76689" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/saurabh-sde3" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://leetcode.com/u/saurabh-sde3/" class="social-link" target="_blank">
+                    <i class="fas fa-code"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Saurabh Verma. All rights reserved.</p>
+            <p>Senior Backend Engineer | Python • AWS • Scalable Systems</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        function smoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Download resume function
+        function downloadResume() {
+            // Create a temporary link to download the resume
+            const link = document.createElement('a');
+            link.href = 'https://drive.google.com/file/d/1NoGLIM7mJH8suGex19AWPCXR3WhScX7M/view'; // You can replace this with a PDF version
+            link.download = 'https://drive.google.com/file/d/1NoGLIM7mJH8suGex19AWPCXR3WhScX7M/view';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Initialize interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            smoothScroll();
+        });
+
+        // Add active navigation highlight
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#333';
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.style.color = '#667eea';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+Page 1 of 2
+Saurabh Verma
+Senior Backend Engineer | Python • AWS • Scalable Systems | IIIT Allahabad
+Backend-focused engineer with 10 years of experience in scalable system design, product architecture, and cloud development.
+saurabh.sde3@gmail.com 7451069217
+NOIDA leetcode.com/u/saurabh-sde3/
+linkedin.com/in/saurabh-v-b3a76689 github.com/saurabh-sde3
+WORK EXPERIENCE
+Senior Engineer
+Cambium Networks
+01/2023 - Present, Bangalore, Karnataka Cambium Networks is a leading provider of wireless networking solutions, serving enterprises and
+ISPs globally.
+Developed and optimized backend services for cnMaestro, enhancing network
+monitoring and device management.
+Implemented asynchronous task processing with RabbitMQ & Celery, handling high- volume network events in real-time. Optimized database queries in MongoDB & PostgreSQL, improving response times
+and system efficiency.
+Improved system reliability with Redis caching, optimizing API response times for
+frequent queries. Applied object-oriented principles and design patterns (Factory, Singleton, Strategy, etc.) to develop scalable and maintainable backend services. Conducted in-depth code reviews and mentored junior developers on API design, testing, and cloud-native practices to ensure code quality and team growth.
+Senior Software Developer
+Helloverify India Private Limited
+02/2020 - 01/2023, Noida, Uttar Pradesh
+HelloVerify is a background verification platform offering instant document verification, criminal checks, and identity validation.
+Designed and developed scalable backend services using Django & DRF, handling
+high-volume verification requests. Automated document verification workflows using Selenium, reducing manual
+intervention by 70% . Designed high-level and low-level architectures, ensuring scalability and
+maintainability.
+Integrated third-party cloud services such as Twilio, Razorpay, and Google Maps API
+to enable communication, payments, and location-based features. Led a team of developers and took complete ownership of backend modules — from
+requirement gathering to design, development, and deployment. Consultant
+CPA Global
+08/2015 - 01/2020, Noida, Uttar Pradesh
+CPA Global is a technology-driven company providing enterprise solutions to streamline business operations.
+Automated data extraction and report generation using Selenium, reducing manual
+workload.
+Implemented role-based access control (RBAC) for secure user authentication and
+authorization.
+SKILLS
+Language: Python
+Frameworks: Django, Django
+REST Framework (DRF), Flask, FastAPI, SQLAlchemy
+Core Concepts: Asynchronous
+Programming, Data Structures, Algorithms
+Databases: MySQL, PostgreSQL, MongoDB
+Cloud: AWS (S3, SQS, SNS, EC2, ECS, Lambda, API Gateway, CloudWatch, etc.)
+Messaging/Caching: Redis, RabbitMQ, Celery, Memcached
+Auth: OAuth2, JWT
+AI/LLM Tools: LLaMA, OpenAI
+(GPT), GitHub Copilot
+DevOps: Docker, Jenkins, GitHub, Bitbucket
+Tools & Platforms: Git, Jira, Sentry, Selenium, Google Maps
+API, Twilio, Razorpay
+Technical Leadership: Team
+Leadership, Mentoring, Code
+Reviews
+EDUCATION
+MTech - IT - Software
+Engineering
+IIITA - 9.12 CGPA
+2013 - 2015, Allahabad, Uttar Pradesh
+BTech - Computer Science
+and Engineering
+ACET - UPTU - 75.90 %
+2008 - 2012, Aligarh, Uttar Pradesh
+Achievements/Tasks
+Achievements/Tasks
+Achievements/Tasks
+Page 2 of 2
+PROJECTS
+cnMaestro – Cloud & On-Premises Network Management Platform
+(01/2023 - Present)
+A cloud-based and on-premises software platform for secure, end-to-end wireless network management, offering full network visibility and zero-touch provisioning. Technology Stack: Python, Flask, AWS Services (S3, SQS, SNS, EC2, ECS, Lambda, etc. ), PostgreSQL, MongoDB, Redis, RabbitMQ, JWT, Docker, LLaMA
+Developed multi-tenant architecture to support multiple network operators with isolated
+environments.
+Implemented real-time network monitoring APIs, allowing administrators to track device performance and connectivity.
+Integrated zero-touch provisioning, enabling automated device onboarding and reducing manual setup time. Optimized large-scale data processing and storage in PostgreSQL and MongoDB, enabling
+efficient retrieval of historical network data.
+Implemented event-driven communication with RabbitMQ to enhance responsiveness for alerts and updates.
+Implemented RBAC to enforce secure, role-specific access to network data. Provisioned and managed cloud infrastructure using AWS CDK, enabling scalable and
+repeatable deployments with Infrastructure as Code. Fine-tuned Meta’s LLaMA model on domain-specific datasets to enhance the accuracy of
+downstream NLP tasks such as summarization and question answering. HelloV – WhatsApp-Based Instant Background Verification
+(08/2021 - 01/2023)
+A WhatsApp-integrated application enabling instant document verification (DL, Aadhaar, etc.) and criminal background checks. Technology Stack: Python, Django, DRF, AWS Services ( S3, EC2, Lambda, etc.), Celery, Memcached, Selenium, MySQL, Docker.
+Integrated WhatsApp chatbot for seamless document submission and verification.
+Implemented OCR-based document processing to extract key details from Aadhaar, DL, and other IDs. Designed and optimized MySQL database schema, ensuring fast retrieval of verification
+records. Built asynchronous task processing using Celery & Redis, reducing response times for background verification checks. Automated criminal record searches using Selenium, eliminating manual intervention and
+improving efficiency. Led requirement gathering and system design to ensure scalability and robustness.
+SocialTick – Instant Background Verification for Android & iOS
+(01/2021 - 08/2021)
+A mobile application enabling instant and accurate background verification, including
+document verification, criminal checks, liveliness checks, and face matching. Technology Stack: Python, Django, DRF, AWS Services ( S3, SQS, SNS, EC2, ECS, Lambda, etc.), MySQL, Celery, Redis, JWT, Docker. Designed real-time verification workflows, ensuring instant processing of background
+checks.
+Implemented face-matching and liveliness detection for identity verification using AI-based
+algorithms.
+Integrated secure document upload & OCR processing, automating Aadhaar, DL, and
+passport verification. Visa Screening – Web-Based Background Verification for Visa Applicants
+(02/2020 - 12/2020)
+Designed and developed a Django & DRF-based backend for managing document submission, verification workflows, and payment processing. Automated document validation using
+Selenium, reducing manual intervention. Implemented RBAC for secure applicant data handling and seamless API interaction with Angular frontend.
+iWeb Task Manager – Employee Collaboration & Task Management System
+(06/2016 - 01/2020)
+Developed a Django & DRF-based backend to manage tasks, schedules, and team
+collaboration. Implemented real-time notifications for task updates and status tracking. Built user access management to enforce permissions and integrated APIs with Angular frontend
+for a smooth user experience. AutoBot – Automated Data Extraction & Report Generation
+(10/2015 - 05/2016)
+Developed a Flask-based application to automate data extraction from multiple sources using
+Selenium. Implemented dynamic data parsing to transform unstructured data into structured
+reports. Designed error handling and retry mechanisms to improve extraction reliability and
+ensure seamless report generation.
+CERTIFICATES
+AWS Certified Solutions
+Architect - Associate 2020
+(02/2021)
+Python Gold Badge (05/2020)
+HackerRank
+Ethical Hacking Certification
+Certified from Kyrion (in 2011) and
+Techdefence (in 2013) in Ethical Hacking.
+ACHIEVEMENTS
+Pursuit of Excellence Award
+(CPA Global Limited)
+Got pursuit of excellence award for continuously delivering projects on time. Qualified GATE exam
+Qualified GATE exam from 2011 to 2018 with 98+ percentile. Qualified UGC NET
+Qualified UGC NET December-2014 and
+June-2015.
+PUBLICATIONS
+Journal Article Evaluation of Privacy
+Preserving In-Network
+Aggregation for Different
+Routing Structures in WSNs
+Author(s)
+Saurabh Verma, Vishal Krishna
+Singha, Manish Kumar
+2017
+Proposed an efficient approach to
+detect node replication attacks in
+wireless sensor networks, enhancing
+security and reducing false positives.
+LANGUAGES
+English
+Full Professional Proficiency
+Hindi
+Full Professional Proficiency
