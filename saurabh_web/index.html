@@ -171,11 +171,53 @@
             z-index: 1000;
         }
 
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
         .nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            padding: 20px 0;
+            padding: 0;
+            margin: 0;
         }
 
         .nav li {
@@ -188,12 +230,13 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+            padding: 10px 0;
         }
 
         .nav a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 5px;
             left: 0;
             width: 0;
             height: 2px;
@@ -203,6 +246,86 @@
 
         .nav a:hover::after {
             width: 100%;
+        }
+
+        /* Mobile Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease;
+            z-index: 1001;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 20px 30px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background: #f7fafc;
+            border-left-color: #667eea;
+            color: #667eea;
+        }
+
+        .sidebar a i {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            padding: 5px;
         }
 
         /* Sections */
@@ -279,54 +402,98 @@
         }
 
         .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+
+        .skill-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .skill-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .skill-description {
+            color: #718096;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 8px;
         }
 
         .skill-tag {
-            background: linear-gradient(135deg, #f7fafc, #edf2f7);
-            border: 2px solid #e2e8f0;
-            padding: 10px 16px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            background: #f7fafc;
+            color: #4a5568;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 500;
-            color: #2d3748;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
-            position: relative;
-            cursor: default;
         }
 
         .skill-tag:hover {
-            transform: translateY(-2px);
+            background: #667eea;
+            color: white;
             border-color: #667eea;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .skill-tag.expert {
-            background: linear-gradient(135deg, #48bb78, #38a169);
-            color: white;
-            border-color: #38a169;
-        }
-
-        .skill-tag.expert:hover {
-            background: linear-gradient(135deg, #38a169, #2f855a);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(56, 161, 105, 0.3);
-        }
-
-        .skill-tag.advanced {
-            background: linear-gradient(135deg, #4299e1, #3182ce);
-            color: white;
-            border-color: #3182ce;
-        }
-
-        .skill-tag.advanced:hover {
-            background: linear-gradient(135deg, #3182ce, #2c5282);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
         }
 
         /* Experience Section */
@@ -727,13 +894,15 @@
             }
 
             .nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
+                display: none;
             }
 
-            .nav li {
-                margin: 5px 0;
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 10px 20px;
             }
 
             .projects-grid {
@@ -742,6 +911,28 @@
 
             .skills-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-item {
+                padding: 15px;
+            }
+
+            .skill-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .skill-name {
+                font-size: 1rem;
+            }
+
+            .skill-description {
+                font-size: 0.85rem;
             }
 
             .experience-header {
@@ -779,6 +970,312 @@
                 width: 25px;
                 height: 25px;
                 font-size: 0.8rem;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile-specific optimizations */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header {
+                padding: 60px 0;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .header .description {
+                font-size: 1rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 20px;
+            }
+
+            .download-btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .nav-container {
+                padding: 8px 15px;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .hamburger span {
+                width: 22px;
+                height: 2px;
+            }
+
+            .sidebar {
+                width: 280px;
+                left: -280px;
+            }
+
+            .sidebar a {
+                padding: 18px 25px;
+                font-size: 0.95rem;
+            }
+
+            .skill-category {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .skill-category h3 {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .skill-item {
+                padding: 12px;
+            }
+
+            .skill-header {
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .skill-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+
+            .skill-name {
+                font-size: 0.95rem;
+            }
+
+            .skill-description {
+                font-size: 0.8rem;
+                margin-bottom: 12px;
+            }
+
+            .skill-tags {
+                gap: 6px;
+            }
+
+            .skill-tag {
+                padding: 3px 8px;
+                font-size: 0.75rem;
+            }
+
+            .experience-card {
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+
+            .experience-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .company-name {
+                font-size: 1rem;
+            }
+
+            .period-badge {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .experience-description > p {
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            .achievement-list li {
+                padding-left: 30px;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .achievement-list li::before {
+                width: 20px;
+                height: 20px;
+                font-size: 0.7rem;
+            }
+
+            .experience-tags {
+                gap: 8px;
+            }
+
+            .experience-tag {
+                padding: 4px 10px;
+                font-size: 0.75rem;
+            }
+
+            .projects-grid {
+                gap: 25px;
+            }
+
+            .project-card {
+                margin-bottom: 20px;
+            }
+
+            .project-image {
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .project-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+
+            .project-period {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            .tech-stack {
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+
+            .tech-tag {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+
+            .project-highlights li {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+                padding-left: 18px;
+            }
+
+            .edu-card {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .edu-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+
+            .edu-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .edu-details {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+
+            .edu-score {
+                font-size: 0.95rem;
+            }
+
+            .footer {
+                padding: 30px 0;
+            }
+
+            .footer .social-links {
+                gap: 15px;
+                margin-bottom: 15px;
+            }
+
+            .social-link {
+                font-size: 1.3rem;
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+                margin: 5px 0;
+            }
+        }
+
+        /* Extra small mobile devices */
+        @media (max-width: 320px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .skill-category h3 {
+                font-size: 1.1rem;
+            }
+
+            .experience-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .project-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .contact-info {
+                gap: 10px;
+            }
+
+            .contact-item {
+                font-size: 0.9rem;
+            }
+
+            /* Ultra compact navigation for very small screens */
+            .nav ul {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 6px 0;
+                gap: 5px;
+            }
+
+            .nav li {
+                margin: 0;
+            }
+
+            .nav a {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+                margin: 2px;
             }
         }
     </style>
@@ -819,9 +1316,16 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <ul>
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">SV</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="desktop-nav">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -829,6 +1333,36 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="#home" class="sidebar-link">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <a href="#skills" class="sidebar-link">
+                <i class="fas fa-tools"></i>
+                Skills
+            </a>
+            <a href="#experience" class="sidebar-link">
+                <i class="fas fa-briefcase"></i>
+                Experience
+            </a>
+            <a href="#projects" class="sidebar-link">
+                <i class="fas fa-project-diagram"></i>
+                Projects
+            </a>
+            <a href="#education" class="sidebar-link">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </a>
+            <a href="#contact" class="sidebar-link">
+                <i class="fas fa-envelope"></i>
+                Contact
+            </a>
+        </div>
+        <div class="overlay" id="overlay"></div>
     </nav>
 
     <!-- Skills Section -->
@@ -839,86 +1373,255 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Programming & Frameworks</h3>
                     <div class="skills-container">
-                        <span class="skill-tag expert">Python</span>
-                        <span class="skill-tag expert">Django</span>
-                        <span class="skill-tag expert">Django REST Framework</span>
-                        <span class="skill-tag advanced">Flask</span>
-                        <span class="skill-tag advanced">FastAPI</span>
-                        <span class="skill-tag advanced">SQLAlchemy</span>
-                        <span class="skill-tag advanced">Asynchronous Programming</span>
-                        <span class="skill-tag advanced">Data Structures & Algorithms</span>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fab fa-python"></i></div>
+                                <h4 class="skill-name">Python</h4>
+                            </div>
+                            <p class="skill-description">Core programming language with extensive experience in backend development</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">10+ years</span>
+                                <span class="skill-tag">Expert</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-globe"></i></div>
+                                <h4 class="skill-name">Django & DRF</h4>
+                            </div>
+                            <p class="skill-description">Full-stack web framework for rapid development and REST APIs</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">8+ years</span>
+                                <span class="skill-tag">Expert</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-flask"></i></div>
+                                <h4 class="skill-name">Flask & FastAPI</h4>
+                            </div>
+                            <p class="skill-description">Lightweight frameworks for microservices and high-performance APIs</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">5+ years</span>
+                                <span class="skill-tag">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-sync-alt"></i></div>
+                                <h4 class="skill-name">Async Programming</h4>
+                            </div>
+                            <p class="skill-description">Asynchronous programming patterns for high-concurrency applications</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">asyncio</span>
+                                <span class="skill-tag">Celery</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
                     <div class="skills-container">
-                        <span class="skill-tag expert">AWS Services</span>
-                        <span class="skill-tag expert">S3, EC2, Lambda</span>
-                        <span class="skill-tag expert">SQS, SNS, ECS</span>
-                        <span class="skill-tag advanced">API Gateway</span>
-                        <span class="skill-tag advanced">CloudWatch</span>
-                        <span class="skill-tag advanced">Docker</span>
-                        <span class="skill-tag advanced">Jenkins</span>
-                        <span class="skill-tag advanced">Infrastructure as Code</span>
-                        <span class="skill-tag advanced">AWS CDK</span>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                                <h4 class="skill-name">AWS Services</h4>
+                            </div>
+                            <p class="skill-description">Comprehensive cloud services including compute, storage, and messaging</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">EC2</span>
+                                <span class="skill-tag">S3</span>
+                                <span class="skill-tag">Lambda</span>
+                                <span class="skill-tag">SQS</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                                <h4 class="skill-name">Containerization</h4>
+                            </div>
+                            <p class="skill-description">Container technologies for application deployment and scaling</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">ECS</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                                <h4 class="skill-name">CI/CD & IaC</h4>
+                            </div>
+                            <p class="skill-description">Continuous integration, deployment, and infrastructure automation</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Jenkins</span>
+                                <span class="skill-tag">AWS CDK</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4 class="skill-name">Monitoring</h4>
+                            </div>
+                            <p class="skill-description">Application performance monitoring and logging solutions</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">CloudWatch</span>
+                                <span class="skill-tag">Sentry</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3><i class="fas fa-database"></i> Databases & Messaging</h3>
                     <div class="skills-container">
-                        <span class="skill-tag expert">PostgreSQL</span>
-                        <span class="skill-tag expert">MongoDB</span>
-                        <span class="skill-tag advanced">MySQL</span>
-                        <span class="skill-tag expert">Redis</span>
-                        <span class="skill-tag advanced">Memcached</span>
-                        <span class="skill-tag expert">RabbitMQ</span>
-                        <span class="skill-tag expert">Celery</span>
-                        <span class="skill-tag advanced">Database Optimization</span>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-elephant"></i></div>
+                                <h4 class="skill-name">PostgreSQL</h4>
+                            </div>
+                            <p class="skill-description">Advanced relational database with complex queries and optimization</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">8+ years</span>
+                                <span class="skill-tag">Expert</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-leaf"></i></div>
+                                <h4 class="skill-name">MongoDB</h4>
+                            </div>
+                            <p class="skill-description">NoSQL database for flexible document storage and big data</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">5+ years</span>
+                                <span class="skill-tag">Expert</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                                <h4 class="skill-name">Redis & Caching</h4>
+                            </div>
+                            <p class="skill-description">In-memory data structures for caching and session management</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Redis</span>
+                                <span class="skill-tag">Memcached</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-exchange-alt"></i></div>
+                                <h4 class="skill-name">Message Queues</h4>
+                            </div>
+                            <p class="skill-description">Asynchronous messaging for distributed system communication</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">RabbitMQ</span>
+                                <span class="skill-tag">Celery</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <h3><i class="fas fa-brain"></i> AI/ML & Integration</h3>
                     <div class="skills-container">
-                        <span class="skill-tag advanced">Git & GitHub</span>
-                        <span class="skill-tag advanced">Bitbucket</span>
-                        <span class="skill-tag advanced">Jira</span>
-                        <span class="skill-tag advanced">Sentry</span>
-                        <span class="skill-tag expert">Selenium</span>
-                        <span class="skill-tag advanced">OAuth2 & JWT</span>
-                        <span class="skill-tag advanced">Google Maps API</span>
-                        <span class="skill-tag advanced">Twilio</span>
-                        <span class="skill-tag advanced">Razorpay</span>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                                <h4 class="skill-name">AI/ML Tools</h4>
+                            </div>
+                            <p class="skill-description">Large language models and AI-powered development tools</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">LLaMA</span>
+                                <span class="skill-tag">OpenAI GPT</span>
+                                <span class="skill-tag">GitHub Copilot</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-plug"></i></div>
+                                <h4 class="skill-name">Third-Party APIs</h4>
+                            </div>
+                            <p class="skill-description">Integration with payment gateways, communication, and mapping services</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Razorpay</span>
+                                <span class="skill-tag">Twilio</span>
+                                <span class="skill-tag">Google Maps</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-lock"></i></div>
+                                <h4 class="skill-name">Authentication</h4>
+                            </div>
+                            <p class="skill-description">Secure authentication and authorization mechanisms</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">OAuth2</span>
+                                <span class="skill-tag">JWT</span>
+                                <span class="skill-tag">RBAC</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-browser"></i></div>
+                                <h4 class="skill-name">Web Automation</h4>
+                            </div>
+                            <p class="skill-description">Browser automation for testing and data extraction</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Selenium</span>
+                                <span class="skill-tag">8+ years</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> AI/ML & Leadership</h3>
+                    <h3><i class="fas fa-users"></i> Leadership & Architecture</h3>
                     <div class="skills-container">
-                        <span class="skill-tag advanced">LLaMA</span>
-                        <span class="skill-tag advanced">OpenAI GPT</span>
-                        <span class="skill-tag advanced">GitHub Copilot</span>
-                        <span class="skill-tag expert">Team Leadership</span>
-                        <span class="skill-tag expert">Code Reviews</span>
-                        <span class="skill-tag expert">Mentoring</span>
-                        <span class="skill-tag expert">System Architecture</span>
-                        <span class="skill-tag expert">Project Management</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Design Patterns & Principles</h3>
-                    <div class="skills-container">
-                        <span class="skill-tag expert">Object-Oriented Programming</span>
-                        <span class="skill-tag advanced">Factory Pattern</span>
-                        <span class="skill-tag advanced">Singleton Pattern</span>
-                        <span class="skill-tag advanced">Strategy Pattern</span>
-                        <span class="skill-tag expert">RBAC</span>
-                        <span class="skill-tag expert">Multi-tenant Architecture</span>
-                        <span class="skill-tag expert">Scalable System Design</span>
-                        <span class="skill-tag advanced">Microservices</span>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+                                <h4 class="skill-name">Team Leadership</h4>
+                            </div>
+                            <p class="skill-description">Leading development teams and mentoring junior developers</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">5+ years</span>
+                                <span class="skill-tag">Mentoring</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
+                                <h4 class="skill-name">System Architecture</h4>
+                            </div>
+                            <p class="skill-description">Designing scalable, maintainable, and high-performance systems</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Scalable Design</span>
+                                <span class="skill-tag">Microservices</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+                                <h4 class="skill-name">Code Quality</h4>
+                            </div>
+                            <p class="skill-description">Code reviews, best practices, and maintaining high code standards</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Code Reviews</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                                <h4 class="skill-name">Project Management</h4>
+                            </div>
+                            <p class="skill-description">End-to-end project delivery and agile development methodologies</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Agile</span>
+                                <span class="skill-tag">Jira</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1303,6 +2006,43 @@
                 });
             });
         }
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        function openSidebar() {
+            sidebar.style.left = '0';
+            overlay.style.display = 'block';
+            hamburger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.style.left = '-300px';
+            overlay.style.display = 'none';
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openSidebar);
+        overlay.addEventListener('click', closeSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+
+        // Close sidebar when clicking on a link
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
+
+        // Handle keyboard events
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSidebar();
+            }
+        });
 
         // Download resume function
         function downloadResume() {
